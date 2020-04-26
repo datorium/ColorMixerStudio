@@ -10,9 +10,6 @@ using System.Windows.Forms;
 
 namespace ColorMixerStudio
 {
-    /// <summary>
-    /// test
-    /// </summary>
     public partial class Form1 : Form
     {
         int red = 0;
