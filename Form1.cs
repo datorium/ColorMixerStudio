@@ -100,5 +100,21 @@ namespace ColorMixerStudio
             BlueBox.BackColor = Color.FromArgb(0, 0, blue);
             this.BackColor = Color.FromArgb(red, green, blue);
         }
+
+        private void RedTimer_Tick(object sender, EventArgs e)
+        {
+            if(RedSlider.Value < RedSlider.Maximum)
+            {
+                RedSlider.Value += 1;
+                red = RedSlider.Value;
+                RedBox.BackColor = Color.FromArgb(red, 0, 0);
+                this.BackColor = Color.FromArgb(red, green, blue);
+            }            
+        }
+
+        private void RedTimerStart_Click(object sender, EventArgs e)
+        {
+            RedTimer.Start();
+        }
     }
 }

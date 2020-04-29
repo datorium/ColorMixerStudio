@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.RedBox = new System.Windows.Forms.PictureBox();
             this.GreenBox = new System.Windows.Forms.PictureBox();
             this.BlueBox = new System.Windows.Forms.PictureBox();
@@ -39,6 +40,8 @@
             this.GreenSlider = new System.Windows.Forms.TrackBar();
             this.BlueSlider = new System.Windows.Forms.TrackBar();
             this.ResetColors = new System.Windows.Forms.Button();
+            this.RedTimer = new System.Windows.Forms.Timer(this.components);
+            this.RedTimerStart = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.RedBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GreenBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BlueBox)).BeginInit();
@@ -73,7 +76,7 @@
             // 
             // RandomRed
             // 
-            this.RandomRed.Location = new System.Drawing.Point(32, 297);
+            this.RandomRed.Location = new System.Drawing.Point(32, 338);
             this.RandomRed.Name = "RandomRed";
             this.RandomRed.Size = new System.Drawing.Size(200, 63);
             this.RandomRed.TabIndex = 3;
@@ -83,7 +86,7 @@
             // 
             // RandomGreen
             // 
-            this.RandomGreen.Location = new System.Drawing.Point(278, 297);
+            this.RandomGreen.Location = new System.Drawing.Point(278, 338);
             this.RandomGreen.Name = "RandomGreen";
             this.RandomGreen.Size = new System.Drawing.Size(200, 63);
             this.RandomGreen.TabIndex = 4;
@@ -93,7 +96,7 @@
             // 
             // RandomBlue
             // 
-            this.RandomBlue.Location = new System.Drawing.Point(517, 297);
+            this.RandomBlue.Location = new System.Drawing.Point(517, 338);
             this.RandomBlue.Name = "RandomBlue";
             this.RandomBlue.Size = new System.Drawing.Size(200, 63);
             this.RandomBlue.TabIndex = 5;
@@ -103,7 +106,7 @@
             // 
             // RandomMix
             // 
-            this.RandomMix.Location = new System.Drawing.Point(32, 366);
+            this.RandomMix.Location = new System.Drawing.Point(32, 407);
             this.RandomMix.Name = "RandomMix";
             this.RandomMix.Size = new System.Drawing.Size(685, 63);
             this.RandomMix.TabIndex = 6;
@@ -143,7 +146,7 @@
             // 
             // ResetColors
             // 
-            this.ResetColors.Location = new System.Drawing.Point(32, 435);
+            this.ResetColors.Location = new System.Drawing.Point(32, 476);
             this.ResetColors.Name = "ResetColors";
             this.ResetColors.Size = new System.Drawing.Size(685, 63);
             this.ResetColors.TabIndex = 10;
@@ -151,11 +154,26 @@
             this.ResetColors.UseVisualStyleBackColor = true;
             this.ResetColors.Click += new System.EventHandler(this.ResetColors_Click);
             // 
+            // RedTimer
+            // 
+            this.RedTimer.Tick += new System.EventHandler(this.RedTimer_Tick);
+            // 
+            // RedTimerStart
+            // 
+            this.RedTimerStart.Location = new System.Drawing.Point(32, 269);
+            this.RedTimerStart.Name = "RedTimerStart";
+            this.RedTimerStart.Size = new System.Drawing.Size(200, 63);
+            this.RedTimerStart.TabIndex = 11;
+            this.RedTimerStart.Text = "Red Party";
+            this.RedTimerStart.UseVisualStyleBackColor = true;
+            this.RedTimerStart.Click += new System.EventHandler(this.RedTimerStart_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(756, 543);
+            this.Controls.Add(this.RedTimerStart);
             this.Controls.Add(this.ResetColors);
             this.Controls.Add(this.BlueSlider);
             this.Controls.Add(this.GreenSlider);
@@ -193,6 +211,8 @@
         private System.Windows.Forms.TrackBar GreenSlider;
         private System.Windows.Forms.TrackBar BlueSlider;
         private System.Windows.Forms.Button ResetColors;
+        private System.Windows.Forms.Timer RedTimer;
+        private System.Windows.Forms.Button RedTimerStart;
     }
 }
 
