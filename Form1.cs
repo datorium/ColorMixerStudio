@@ -15,6 +15,10 @@ namespace ColorMixerStudio
         int red = 0;
         int green = 0;
         int blue = 0;
+        int redStep = 1;
+        int greenStep = 1;
+        int blueStep = 1;
+
         Random rand = new Random();
 
         public Form1()
@@ -132,11 +136,16 @@ namespace ColorMixerStudio
 
         private void GreenTimer_Tick(object sender, EventArgs e)
         {
-            if (GreenSlider.Value < GreenSlider.Maximum)
+            if (GreenSlider.Value == GreenSlider.Maximum)
             {
-                GreenSlider.Value += 1;
-                UpdateGreen();
+                greenStep = -1;
             }
+            else if (GreenSlider.Value == GreenSlider.Minimum)
+            {
+                greenStep = 1;
+            }
+            GreenSlider.Value += greenStep;
+            UpdateGreen();
         }
 
         private void GreenTimerStart_Click(object sender, EventArgs e)
@@ -146,16 +155,22 @@ namespace ColorMixerStudio
 
         private void BlueTimerStart_Click(object sender, EventArgs e)
         {
+            BlueTimer.Interval = 20;
             BlueTimer.Start();
         }
 
         private void BlueTimer_Tick(object sender, EventArgs e)
         {
-            if (BlueSlider.Value < BlueSlider.Maximum)
+            if (BlueSlider.Value == BlueSlider.Maximum)
             {
-                BlueSlider.Value += 1;
-                UpdateBlue();
+                blueStep = -1;
             }
+            else if(BlueSlider.Value == BlueSlider.Minimum)
+            {
+                blueStep = 1;
+            }
+            BlueSlider.Value += blueStep;
+            UpdateBlue();
         }
     }
 }
