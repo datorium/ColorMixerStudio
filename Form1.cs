@@ -103,9 +103,11 @@ namespace ColorMixerStudio
         {
             if(RedSlider.Value < RedSlider.Maximum)
             {
-                RedSlider.Value += 1;
-                UpdateRed();
-            }            
+                
+            }
+
+            RedSlider.Value += 1;
+            UpdateRed();
         }
 
         private void RedTimerStart_Click(object sender, EventArgs e)
@@ -150,6 +152,7 @@ namespace ColorMixerStudio
 
         private void GreenTimerStart_Click(object sender, EventArgs e)
         {
+            GreenTimer.Interval = 10;
             GreenTimer.Start();
         }
 
