@@ -65,23 +65,17 @@ namespace ColorMixerStudio
 
         private void RedSlider_Scroll(object sender, EventArgs e)
         {
-            red = RedSlider.Value;
-            RedBox.BackColor = Color.FromArgb(red, 0, 0);
-            this.BackColor = Color.FromArgb(red, green, blue);
+            UpdateRed();
         }
 
         private void GreenSlider_Scroll(object sender, EventArgs e)
         {
-            green = GreenSlider.Value;
-            GreenBox.BackColor = Color.FromArgb(0, green, 0);
-            this.BackColor = Color.FromArgb(red, green, blue);
+            UpdateGreen();
         }
 
         private void BlueSlider_Scroll(object sender, EventArgs e)
         {
-            blue = BlueSlider.Value;
-            BlueBox.BackColor = Color.FromArgb(0, 0, blue);
-            this.BackColor = Color.FromArgb(red, green, blue);
+            UpdateBlue();
         }
 
         private void ResetColors_Click(object sender, EventArgs e)
@@ -106,15 +100,34 @@ namespace ColorMixerStudio
             if(RedSlider.Value < RedSlider.Maximum)
             {
                 RedSlider.Value += 1;
-                red = RedSlider.Value;
-                RedBox.BackColor = Color.FromArgb(red, 0, 0);
-                this.BackColor = Color.FromArgb(red, green, blue);
+                UpdateRed();
             }            
         }
 
         private void RedTimerStart_Click(object sender, EventArgs e)
         {
             RedTimer.Start();
+        }
+
+        private void UpdateRed()
+        {
+            red = RedSlider.Value;
+            RedBox.BackColor = Color.FromArgb(red, 0, 0);
+            this.BackColor = Color.FromArgb(red, green, blue);
+        }
+
+        private void UpdateGreen()
+        {
+            green = GreenSlider.Value;
+            GreenBox.BackColor = Color.FromArgb(0, green, 0);
+            this.BackColor = Color.FromArgb(red, green, blue);
+        }
+
+        private void UpdateBlue()
+        {
+            blue = BlueSlider.Value;
+            BlueBox.BackColor = Color.FromArgb(0, 0, blue);
+            this.BackColor = Color.FromArgb(red, green, blue);
         }
     }
 }
