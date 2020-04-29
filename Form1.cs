@@ -101,12 +101,11 @@ namespace ColorMixerStudio
 
         private void RedTimer_Tick(object sender, EventArgs e)
         {
-            if(RedSlider.Value < RedSlider.Maximum)
+            RedSlider.Value += redStep;
+            if (RedSlider.Value == RedSlider.Maximum || RedSlider.Value == RedSlider.Minimum)
             {
-                
-            }
-
-            RedSlider.Value += 1;
+                redStep *= -1; //redStep = redStep * (-1);
+            } 
             UpdateRed();
         }
 
