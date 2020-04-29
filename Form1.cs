@@ -129,5 +129,33 @@ namespace ColorMixerStudio
             BlueBox.BackColor = Color.FromArgb(0, 0, blue);
             this.BackColor = Color.FromArgb(red, green, blue);
         }
+
+        private void GreenTimer_Tick(object sender, EventArgs e)
+        {
+            if (GreenSlider.Value < GreenSlider.Maximum)
+            {
+                GreenSlider.Value += 1;
+                UpdateGreen();
+            }
+        }
+
+        private void GreenTimerStart_Click(object sender, EventArgs e)
+        {
+            GreenTimer.Start();
+        }
+
+        private void BlueTimerStart_Click(object sender, EventArgs e)
+        {
+            BlueTimer.Start();
+        }
+
+        private void BlueTimer_Tick(object sender, EventArgs e)
+        {
+            if (BlueSlider.Value < BlueSlider.Maximum)
+            {
+                BlueSlider.Value += 1;
+                UpdateBlue();
+            }
+        }
     }
 }

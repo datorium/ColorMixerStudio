@@ -42,6 +42,10 @@
             this.ResetColors = new System.Windows.Forms.Button();
             this.RedTimer = new System.Windows.Forms.Timer(this.components);
             this.RedTimerStart = new System.Windows.Forms.Button();
+            this.GreenTimerStart = new System.Windows.Forms.Button();
+            this.BlueTimerStart = new System.Windows.Forms.Button();
+            this.GreenTimer = new System.Windows.Forms.Timer(this.components);
+            this.BlueTimer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.RedBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GreenBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BlueBox)).BeginInit();
@@ -168,11 +172,41 @@
             this.RedTimerStart.UseVisualStyleBackColor = true;
             this.RedTimerStart.Click += new System.EventHandler(this.RedTimerStart_Click);
             // 
+            // GreenTimerStart
+            // 
+            this.GreenTimerStart.Location = new System.Drawing.Point(278, 269);
+            this.GreenTimerStart.Name = "GreenTimerStart";
+            this.GreenTimerStart.Size = new System.Drawing.Size(200, 63);
+            this.GreenTimerStart.TabIndex = 12;
+            this.GreenTimerStart.Text = "Green Party";
+            this.GreenTimerStart.UseVisualStyleBackColor = true;
+            this.GreenTimerStart.Click += new System.EventHandler(this.GreenTimerStart_Click);
+            // 
+            // BlueTimerStart
+            // 
+            this.BlueTimerStart.Location = new System.Drawing.Point(517, 269);
+            this.BlueTimerStart.Name = "BlueTimerStart";
+            this.BlueTimerStart.Size = new System.Drawing.Size(200, 63);
+            this.BlueTimerStart.TabIndex = 13;
+            this.BlueTimerStart.Text = "Blue Party";
+            this.BlueTimerStart.UseVisualStyleBackColor = true;
+            this.BlueTimerStart.Click += new System.EventHandler(this.BlueTimerStart_Click);
+            // 
+            // GreenTimer
+            // 
+            this.GreenTimer.Tick += new System.EventHandler(this.GreenTimer_Tick);
+            // 
+            // BlueTimer
+            // 
+            this.BlueTimer.Tick += new System.EventHandler(this.BlueTimer_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(756, 543);
+            this.ClientSize = new System.Drawing.Size(756, 555);
+            this.Controls.Add(this.BlueTimerStart);
+            this.Controls.Add(this.GreenTimerStart);
             this.Controls.Add(this.RedTimerStart);
             this.Controls.Add(this.ResetColors);
             this.Controls.Add(this.BlueSlider);
@@ -213,6 +247,10 @@
         private System.Windows.Forms.Button ResetColors;
         private System.Windows.Forms.Timer RedTimer;
         private System.Windows.Forms.Button RedTimerStart;
+        private System.Windows.Forms.Button GreenTimerStart;
+        private System.Windows.Forms.Button BlueTimerStart;
+        private System.Windows.Forms.Timer GreenTimer;
+        private System.Windows.Forms.Timer BlueTimer;
     }
 }
 
