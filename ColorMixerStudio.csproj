@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Alecive-Flatwoken-Apps-Color-B.ico</ApplicationIcon>
+    <ApplicationIcon>Mcdo-Design-Compass-Color-Meter.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -84,6 +84,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Alecive-Flatwoken-Apps-Color-B.ico" />
+    <Content Include="Mcdo-Design-Compass-Color-Meter.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
